@@ -4,5 +4,5 @@ function isOdd(c){
       document.write("True");
     }  
   } 
-  let num=prompt("pleade Enter the Number");
+  let num=prompt("please Enter the Number");
   isOdd(num);
