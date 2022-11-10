@@ -7,5 +7,6 @@ hello.style.border="solid black 2px"
 hello.style.alignItems="center"
 hello.style.height="100px"
 hello.style.width="300px"
+hello.style.margin="100px"
 
 

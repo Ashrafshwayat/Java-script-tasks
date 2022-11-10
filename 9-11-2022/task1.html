@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+          <legend>Personal Details</legend>
+
+    <p>
+            <label>First name: </label><input type="text" title="firstname" id="firstname" />
+          </p>
+ 
+    <p>
+            <label>your age: <input type="number"  id="yourage" /></label>
+          </p> 
+    <p>
+            Gender :
+            <label><input type="radio" name="gender" id="male" value="male" /> Male</label>
+            <label><input type="radio"  name="gender" id="female" value="female" /> Female</label>
+          </p>
+          <p>
+            <label>
+                Brief Description
+              <br />
+              <textarea id="brief" cols="30" rows="3"></textarea>
+          
+          </p>
+          <p>Select your favorite Languages :</p>
+          <label for="c1"> <input  type="checkbox" name="lang" value="css" id="c1">Css</label>
+          <label for="c2"><input type="checkbox" name="lang" value="html" id="c2"> Html</label>
+          <label for="c3"><input  type="checkbox" name="lang" value="js" id="c3">js</label>
+          <label for="c4"><input  type="checkbox" name="lang" value="c#" id="c4">c#</label>
+          
+
+          <br><br><br>
+          <label>
+            Your major and university 
+            <br />
+            <textarea id="university" cols="30" rows="3"></textarea>
+          </label>
+          <p> 
+            <button style="display:inline-block ;" id="submitbtn" onclick="ashraf2()" type="button">Submit</button>
+            <button style="display:inline-block ;" id="showme" onclick="ashraf3()"  type="button">show me my card please please</button>
+          </p>
+
+        </fieldset>
+      </form>
+      <div id="mydiv">
+        <p id="firstnamecard"></p>
+        <p id="youragecard"></p>
+        <p id="gendercard"></p>
+        <p id="landue"></p>
+        <p id="briefcard"></p>
+        <p id="universitycard"></p>
+
+      </div>
+      <script>
+     
+       
+           
+
+       function ashraf2(){
+        let checkboxes = document.querySelectorAll('input[name="lang"]:checked');
+        let values = [];
+checkboxes.forEach((checkbox) => {
+    values.push(checkbox.value);
+    localStorage.setItem('lang',values);
+                    });
+
+        var firstname =document.getElementById("firstname").value;
+        var yourage =document.getElementById("yourage").value;
+        var brief =document.getElementById("brief").value;
+        var university =document.getElementById("university").value;
+
+      
+        localStorage.setItem('firstname',firstname);
+        localStorage.setItem('yourage',yourage);
+        localStorage.setItem('brief',brief);
+        localStorage.setItem('uneversity',university);
+        let ele = document.getElementsByName('gender');
+              let gendercard2;
+            for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                gendercard2 = ele[i].value;
+                localStorage.setItem('gender',gendercard2);
+              
+            }
+    }
+
+
+    function ashraf3(){
+        document.getElementById("firstnamecard").innerHTML="My Name Is "+localStorage.getItem("firstname");
+        document.getElementById("youragecard").innerHTML="Im "+localStorage.getItem("yourage")+"Years Old";
+        document.getElementById("gendercard").innerHTML="Im a "+localStorage.getItem("gender");
+        document.getElementById("landue").innerHTML="My Prefferd Languages are "+localStorage.getItem("lang");
+        document.getElementById("briefcard").innerHTML=localStorage.getItem("brief");
+        document.getElementById("universitycard").innerHTML="I studied "+localStorage.getItem("uneversity");
+        document.getElementById("mydiv").style.backgroundColor="red";
+        document.getElementById("mydiv").style.padding="100px";
+        document.getElementById("mydiv").style.width="500px"
+
+
+
+
+
+
+    }
+
+        
+       
+        
+
+
+
+    
+
+      </script>
+    
+</body>
+</html>
