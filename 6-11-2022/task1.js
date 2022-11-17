@@ -44,3 +44,24 @@ switch(month)
 
 }
  document.write(month)
+
+
+
+
+// let month=prompt("enter your month");
+// switch(+month){
+//    case 1:
+//      month=("jan");
+//      break;
+
+//     case 2:
+//       month=("fab");
+//       break;
+
+//     case 3:
+//       month=("march");
+//       break;
+
+
+// }
+// document.write(month)

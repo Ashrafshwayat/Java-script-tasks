@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- <h1 id="name"></h1>
+    <img src="" id="image">
+    <script src="task5.js"></script> -->
+
+     <label for="">usernaem</label>
+     <input type="text" id="user">
+     <button onclick="ashraf()">next</button>
+     <p id="pp"></p>
+
+
+   
+
+
+    <script>
+    
+          
+        function ashraf(){
+            let x;
+            let y;
+            x=document.getElementById("user").value;
+            localStorage.setItem("user",x)
+            y=localStorage.getItem("user")
+            document.getElementById("pp").innerHTML= "Hi"+" "+y;
+        }
+
+
+
+        let x=5;
+         x=56;
+
+    </script>
+
+</body>
+</html>
